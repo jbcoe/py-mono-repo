@@ -5,8 +5,8 @@ requires-python = "==3.12.*"
 [manifest]
 members = [
     "command-line",
-    "core",
     "front-end",
+    "xyz-core",
     "xyz-workspace",
 ]
 
@@ -90,26 +90,15 @@ name = "command-line"
 version = "0.1.0"
 source = { editable = "command-line" }
 dependencies = [
-    { name = "core" },
     { name = "requests" },
+    { name = "xyz-core" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "core", editable = "core" },
     { name = "requests", specifier = ">=2.31.0" },
+    { name = "xyz-core", editable = "core" },
 ]
-
-[[package]]
-name = "core"
-version = "0.1.0"
-source = { editable = "core" }
-dependencies = [
-    { name = "torch" },
-]
-
-[package.metadata]
-requires-dist = [{ name = "torch", specifier = ">=2.6.0" }]
 
 [[package]]
 name = "fastapi"
@@ -139,16 +128,16 @@ name = "front-end"
 version = "0.1.0"
 source = { editable = "front-end" }
 dependencies = [
-    { name = "core" },
     { name = "fastapi" },
     { name = "uvicorn" },
+    { name = "xyz-core" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "core", editable = "core" },
     { name = "fastapi", specifier = ">=0.115.11" },
     { name = "uvicorn", specifier = ">=0.28.0" },
+    { name = "xyz-core", editable = "core" },
 ]
 
 [[package]]
@@ -607,6 +596,17 @@ sdist = { url = "https://files.pythonhosted.org/packages/4b/4d/938bd85e5bf2edeec
 wheels = [
     { url = "https://files.pythonhosted.org/packages/61/14/33a3a1352cfa71812a3a21e8c9bfb83f60b0011f5e36f2b1399d51928209/uvicorn-0.34.0-py3-none-any.whl", hash = "sha256:023dc038422502fa28a09c7a30bf2b6991512da7dcdb8fd35fe57cfc154126f4", size = 62315 },
 ]
+
+[[package]]
+name = "xyz-core"
+version = "0.1.0"
+source = { editable = "core" }
+dependencies = [
+    { name = "torch" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "torch", specifier = ">=2.6.0" }]
 
 [[package]]
 name = "xyz-workspace"

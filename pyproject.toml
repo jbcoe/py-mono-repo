@@ -20,6 +20,6 @@ members = [
 ]
 
 [tool.uv.sources]
-core = { workspace = true }
+xyz-core = { workspace = true }
 command-line = { workspace = true }
 front-end = { workspace = true }

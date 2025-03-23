@@ -6,7 +6,7 @@ readme = "README.md"
 dependencies = [
     "fastapi>=0.115.11",
     "uvicorn>=0.28.0",
-    "core",
+    "xyz-core",
 ]
 
 [project.scripts]

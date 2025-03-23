@@ -5,7 +5,7 @@ description = "Add your description here"
 readme = "README.md"
 dependencies = [
     "requests>=2.31.0",
-    "core",
+    "xyz-core",
 ]
 
 [project.scripts]
