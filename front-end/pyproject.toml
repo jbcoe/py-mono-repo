@@ -1,0 +1,20 @@
+[project]
+name = "front-end"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+dependencies = [
+    "fastapi>=0.115.11",
+    "uvicorn>=0.28.0",
+    "core",
+]
+
+[project.scripts]
+server = "front_end.server:run"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
