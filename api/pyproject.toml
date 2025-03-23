@@ -1,5 +1,5 @@
 [project]
-name = "front-end"
+name = "xyz-api"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -10,7 +10,7 @@ dependencies = [
 ]
 
 [project.scripts]
-server = "front_end.server:run"
+server = "api.server:run"
 
 [build-system]
 requires = ["setuptools"]

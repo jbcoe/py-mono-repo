@@ -16,10 +16,10 @@ dev = [
 members = [
     "core",
     "command-line",
-    "front-end",
+    "api",
 ]
 
 [tool.uv.sources]
 xyz-core = { workspace = true }
 command-line = { workspace = true }
-front-end = { workspace = true }
+api = { workspace = true }

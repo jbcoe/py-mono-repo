@@ -22,7 +22,7 @@ uv run server --host 127.0.0.1 --port 9000
 uv run server --no-reload
 
 # Or directly with uvicorn
-uvicorn front_end.server:app --reload
+uvicorn xyz.api.server:app --reload
 ```
 
 ## Usage

@@ -2,18 +2,13 @@ import argparse
 import sys
 
 import requests
-from xyz.core import (
-    DEFAULT_CLIENT_HOST,
-    DEFAULT_CLIENT_PORT,
-    DEFAULT_PROTOCOL,
-    GREETING_ENDPOINT,
-)
+from xyz.core import DEFAULT_HOST, DEFAULT_PORT, DEFAULT_PROTOCOL, GREETING_ENDPOINT
 
 
 def get_greeting(
     name,
-    host=DEFAULT_CLIENT_HOST,
-    port=DEFAULT_CLIENT_PORT,
+    host=DEFAULT_HOST,
+    port=DEFAULT_PORT,
     protocol=DEFAULT_PROTOCOL,
     server_url=None,
 ):
@@ -48,14 +43,14 @@ def main():
     parser.add_argument("name", nargs="?", default=None, help="Your name")
     parser.add_argument(
         "--host",
-        default=DEFAULT_CLIENT_HOST,
-        help=f"Server hostname or IP (default: {DEFAULT_CLIENT_HOST})",
+        default=DEFAULT_HOST,
+        help=f"Server hostname or IP (default: {DEFAULT_HOST})",
     )
     parser.add_argument(
         "--port",
         type=int,
-        default=DEFAULT_CLIENT_PORT,
-        help=f"Server port (default: {DEFAULT_CLIENT_PORT})",
+        default=DEFAULT_PORT,
+        help=f"Server port (default: {DEFAULT_PORT})",
     )
     parser.add_argument(
         "--protocol",

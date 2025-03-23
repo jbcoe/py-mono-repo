@@ -4,8 +4,8 @@ requires-python = "==3.12.*"
 
 [manifest]
 members = [
-    "command-line",
-    "front-end",
+    "xyz-api",
+    "xyz-command-line",
     "xyz-core",
     "xyz-workspace",
 ]
@@ -86,21 +86,6 @@ wheels = [
 ]
 
 [[package]]
-name = "command-line"
-version = "0.1.0"
-source = { editable = "command-line" }
-dependencies = [
-    { name = "requests" },
-    { name = "xyz-core" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "requests", specifier = ">=2.31.0" },
-    { name = "xyz-core", editable = "core" },
-]
-
-[[package]]
 name = "fastapi"
 version = "0.115.11"
 source = { registry = "https://pypi.org/simple" }
@@ -121,23 +106,6 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/0a/10/c23352565a6544bdc5353e0b15fc1c563352101f30e24bf500207a54df9a/filelock-3.18.0.tar.gz", hash = "sha256:adbc88eabb99d2fec8c9c1b229b171f18afa655400173ddc653d5d01501fb9f2", size = 18075 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/4d/36/2a115987e2d8c300a974597416d9de88f2444426de9571f4b59b2cca3acc/filelock-3.18.0-py3-none-any.whl", hash = "sha256:c401f4f8377c4464e6db25fff06205fd89bdd83b65eb0488ed1b160f780e21de", size = 16215 },
-]
-
-[[package]]
-name = "front-end"
-version = "0.1.0"
-source = { editable = "front-end" }
-dependencies = [
-    { name = "fastapi" },
-    { name = "uvicorn" },
-    { name = "xyz-core" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "fastapi", specifier = ">=0.115.11" },
-    { name = "uvicorn", specifier = ">=0.28.0" },
-    { name = "xyz-core", editable = "core" },
 ]
 
 [[package]]
@@ -595,6 +563,38 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/4b/4d/938bd85e5bf2edeec766267a5015ad969730bb91e31b44021dfe8b22df6c/uvicorn-0.34.0.tar.gz", hash = "sha256:404051050cd7e905de2c9a7e61790943440b3416f49cb409f965d9dcd0fa73e9", size = 76568 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/61/14/33a3a1352cfa71812a3a21e8c9bfb83f60b0011f5e36f2b1399d51928209/uvicorn-0.34.0-py3-none-any.whl", hash = "sha256:023dc038422502fa28a09c7a30bf2b6991512da7dcdb8fd35fe57cfc154126f4", size = 62315 },
+]
+
+[[package]]
+name = "xyz-api"
+version = "0.1.0"
+source = { editable = "api" }
+dependencies = [
+    { name = "fastapi" },
+    { name = "uvicorn" },
+    { name = "xyz-core" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "fastapi", specifier = ">=0.115.11" },
+    { name = "uvicorn", specifier = ">=0.28.0" },
+    { name = "xyz-core", editable = "core" },
+]
+
+[[package]]
+name = "xyz-command-line"
+version = "0.1.0"
+source = { editable = "command-line" }
+dependencies = [
+    { name = "requests" },
+    { name = "xyz-core" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "requests", specifier = ">=2.31.0" },
+    { name = "xyz-core", editable = "core" },
 ]
 
 [[package]]

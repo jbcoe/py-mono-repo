@@ -1,13 +1,9 @@
-from fastapi import FastAPI
-import random
-import uvicorn
 import argparse
-from xyz.core import (
-    DEFAULT_HOST,
-    DEFAULT_PORT,
-    ROOT_ENDPOINT,
-    GREETING_ENDPOINT,
-)
+import random
+
+import uvicorn
+from fastapi import FastAPI
+from xyz.core import DEFAULT_HOST, DEFAULT_PORT, GREETING_ENDPOINT, ROOT_ENDPOINT
 
 app = FastAPI()
 
@@ -59,7 +55,7 @@ def run():
     args = parser.parse_args()
 
     uvicorn.run(
-        "front_end.server:app",
+        "api.server:app",
         host=args.host,
         port=args.port,
         reload=not args.no_reload,
