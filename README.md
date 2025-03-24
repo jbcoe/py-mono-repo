@@ -24,6 +24,7 @@ mono-repo-py/
 - **Shared Dependencies**: Core package provides shared configuration and utilities
 - **Consistent Versioning**: All packages can be versioned and developed together
 - **Simplified Development**: Developers can work on multiple packages simultaneously
+- **Centralized Logging**: Common logging infrastructure across all packages
 
 ## How It Works
 
@@ -86,6 +87,33 @@ This allows consistent settings across packages:
 from xyz.core import DEFAULT_HOST, DEFAULT_PORT, DEFAULT_PROTOCOL, GREETING_ENDPOINT
 ```
 
+### Logging Infrastructure
+
+The project includes a centralized logging system in the core package:
+
+```python
+# In your application code
+from xyz.core import configure_logging, get_logger
+
+# Set up a logger for the current module
+logger = get_logger(__name__)
+
+# Configure logging with command line args
+configure_logging(level="DEBUG", log_file="app.log")
+
+# Use the logger
+logger.debug("Debug message")
+logger.info("Info message")
+logger.warning("Warning message")
+logger.error("Error message")
+```
+
+Both the API server and command-line client support:
+
+- Debug logging with the `--debug` flag
+- Writing logs to a file with `--log-file FILENAME`
+- Consistent log formatting across all packages
+
 ## Getting Started
 
 ### Setup
@@ -121,6 +149,10 @@ Start the API server:
 uv run server
 # Or with custom host/port
 uv run server --host 127.0.0.1 --port 9000
+# With debug logging
+uv run server --debug
+# Log to file
+uv run server --log-file server.log
 ```
 
 Use the command-line client:
@@ -129,6 +161,10 @@ Use the command-line client:
 uv run greet YourName
 # Or with custom host/port
 uv run greet YourName --host 127.0.0.1 --port 9000
+# With debug logging
+uv run greet YourName --debug
+# Log to file
+uv run greet YourName --log-file client.log
 ```
 
 ## Benefits of This Approach
@@ -137,6 +173,7 @@ uv run greet YourName --host 127.0.0.1 --port 9000
 2. **Consistency**: Shared code ensures consistent behavior across packages
 3. **Development Efficiency**: Changes to shared code immediately affect all packages
 4. **Dependency Management**: UV handles complex dependencies between workspace packages
+5. **Centralized Logging**: Common logging configuration and utilities across all packages
 
 ## Learn More
 

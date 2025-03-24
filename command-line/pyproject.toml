@@ -9,7 +9,7 @@ dependencies = [
 ]
 
 [project.scripts]
-greet = "command_line.client:main"
+greet = "xyz.command_line.client:main"
 
 [build-system]
 requires = ["setuptools"]
@@ -17,3 +17,12 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+
+[tool.pytest.ini_options]
+python_files = "*_test.py"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-cov>=4.1.0",
+]

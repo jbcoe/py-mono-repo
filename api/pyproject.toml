@@ -10,7 +10,7 @@ dependencies = [
 ]
 
 [project.scripts]
-server = "api.server:run"
+server = "xyz.api.server:run"
 
 [build-system]
 requires = ["setuptools"]

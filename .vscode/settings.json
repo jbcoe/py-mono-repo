@@ -1,6 +1,7 @@
 {
   "files.exclude": {
     ".mypy_cache": true,
+    "**/.pycache": true,
     "**/__pycache__": true,
     "**/*.egg-info": true,
     ".ruff_cache": true,
